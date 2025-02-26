@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/head") %>
+        <title>Add new Blog</title>
+</head>
+<style>
+    .body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .form-group {
+        margin: 6%;
+        padding-left: 5%;
+    }
+</style>
+
+<body>
+    <%- include("./partials/nav") %>
+        <%= JSON.stringify(user) %>
+            <% -include("./partials/script") %>
+
+                <!-- <form>
+
+                    <div class="form-group">
+                        <label for="inputAddress">Title</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Enter your Title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="floatingTextarea">Body</label> 
+                        <textarea class="form-control" id="floatingTextarea"></textarea>
+                       
+                      </div>
+                    </div> -->
+                <div class="form-group">
+                    <form action="/blog" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="text class="form-label">Enter Title</label>
+                            <input type="text" class="form-control" id="text" name="title">
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="floatingTextarea">Body</label>
+                            <textarea class="form-control" id="floatingTextarea" name="body"></textarea>
+
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        </div>
+                        <div>
+
+                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                for="multiple_files">Upload cover Image</label>
+                            <input
+                                class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                id="multiple_files" type="file" multiple name="coverImage">
+
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+
+
+                    </form>
+                </div>
+
+</body>
+
+</html>
